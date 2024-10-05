@@ -1,0 +1,101 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Resources/Sprites/WINNERSCREEN.png" type="Texture" id=1]
+[ext_resource path="res://Resources/Sprites/spheregradient.png" type="Texture" id=2]
+[ext_resource path="res://Interfaz/WinnerHUDScript.gd" type="Script" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "WinnerScreenAnim"
+length = 0.34
+step = 0.01
+tracks/0/type = "value"
+tracks/0/path = NodePath("SphereGradient:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 1e-05, 1.199 ), Vector2( 16.4217, 2.72178 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("WINNERSCREEN:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 522.189, 295.211 ), Vector2( 522.189, 295.211 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("WINNERSCREEN:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2, 0.22, 0.33 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 2.53953, 2.53953 ), Vector2( 1.22851, 1.22851 ), Vector2( 1.14657, 1.14657 ), Vector2( 1.1934, 1.1934 ) ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("WINNERSCREEN:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("ColorRect:color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.04 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[node name="WinnerHUD" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0, 0, 0, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WINNERSCREEN" type="Sprite" parent="."]
+position = Vector2( 522.189, 295.211 )
+scale = Vector2( 1.1934, 1.1934 )
+z_index = 2
+texture = ExtResource( 1 )
+vframes = 2
+frame = 1
+
+[node name="SphereGradient" type="Sprite" parent="."]
+self_modulate = Color( 0, 0.53, 1, 0.46 )
+position = Vector2( 505.708, 295.211 )
+scale = Vector2( 16.4217, 2.72178 )
+z_index = 1
+texture = ExtResource( 2 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/WinnerScreenAnim = SubResource( 1 )
+
+[node name="WinnerSoundPlayer" type="AudioStreamPlayer" parent="."]

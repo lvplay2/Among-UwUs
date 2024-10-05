@@ -1,0 +1,26 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+
+
+void fragment() {
+    // Get the vertex color or the color from the texture if set
+    vec4 finalColor = min(texture(TEXTURE, UV), COLOR);
+
+    if(AT_LIGHT_PASS) {
+        // For all fragments in the light we just use the input color
+        COLOR = finalColor;
+		
+		
+    } else {
+        // For all other fragments we make them B&W
+//			float value = finalColor.rgb - vec3(0.3, 0.3, 0.3);
+//        float value = dot(finalColor.rgb, vec3(0.2125, 0.7154, 0.0721));
+        COLOR = finalColor.rgba * vec4(0.2, 0.2, 0.2, 0.7);
+    }
+}"
+
+[resource]
+shader = SubResource( 1 )

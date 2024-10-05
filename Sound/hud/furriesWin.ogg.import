@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/furriesWin.ogg-c0a010f55dd9891be2026e9376461b49.oggstr"
+
+[deps]
+
+source_file="res://Sound/hud/furriesWin.ogg"
+dest_files=[ "res://.import/furriesWin.ogg-c0a010f55dd9891be2026e9376461b49.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

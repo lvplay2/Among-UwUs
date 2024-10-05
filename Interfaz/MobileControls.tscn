@@ -1,0 +1,96 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Interfaz/MobileControls.gd" type="Script" id=1]
+[ext_resource path="res://Interfaz/images/flechachat.png" type="Texture" id=2]
+[ext_resource path="res://Interfaz/images/flechacontrolcentral.png" type="Texture" id=3]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource( 1 )
+
+[node name="ButtonUP" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 130.819, 416.584 )
+rotation = -1.5708
+scale = Vector2( 0.56, 0.56 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonLEFT" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 133.414, 487.82 )
+rotation = -3.14159
+scale = Vector2( 0.56, 0.56 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonCentral" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 140.082, 425.21 )
+scale = Vector2( 0.419206, 0.419206 )
+normal = ExtResource( 3 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonRIGHT" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 199.819, 416.584 )
+scale = Vector2( 0.56, 0.56 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonDOWN" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 203.012, 487.902 )
+rotation = 1.5708
+scale = Vector2( 0.559954, 0.559954 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonLEFTUP" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 97.7978, 418.748 )
+rotation = -2.35619
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonLEFTDOWN" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 133.67, 521.166 )
+rotation = 2.35619
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonRIGHTUP" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 199.652, 383.427 )
+rotation = -0.785398
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+
+[node name="ButtonRIGHTDOWN" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0.5 )
+position = Vector2( 236.911, 486.117 )
+rotation = 0.785398
+scale = Vector2( 0.4, 0.4 )
+normal = ExtResource( 2 )
+passby_press = true
+visibility_mode = 1
+[connection signal="pressed" from="ButtonUP" to="." method="_on_ButtonUP_pressed"]
+[connection signal="pressed" from="ButtonLEFT" to="." method="_on_ButtonLEFT_pressed"]
+[connection signal="pressed" from="ButtonCentral" to="." method="_on_ButtonCentral_pressed"]
+[connection signal="pressed" from="ButtonRIGHT" to="." method="_on_ButtonRIGHT_pressed"]
+[connection signal="pressed" from="ButtonDOWN" to="." method="_on_ButtonDOWN_pressed"]
+[connection signal="pressed" from="ButtonLEFTUP" to="." method="_on_ButtonLEFTUP_pressed"]
+[connection signal="pressed" from="ButtonLEFTDOWN" to="." method="_on_ButtonLEFTDOWN_pressed"]
+[connection signal="pressed" from="ButtonRIGHTUP" to="." method="_on_ButtonRIGHTUP_pressed"]
+[connection signal="pressed" from="ButtonRIGHTDOWN" to="." method="_on_ButtonRIGHTDOWN_pressed"]

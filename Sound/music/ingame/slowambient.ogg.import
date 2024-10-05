@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/slowambient.ogg-10c77a2a1b6c827740416c6eb2bb7078.oggstr"
+
+[deps]
+
+source_file="res://Sound/music/ingame/slowambient.ogg"
+dest_files=[ "res://.import/slowambient.ogg-10c77a2a1b6c827740416c6eb2bb7078.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

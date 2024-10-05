@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hudhit.wav-5b108874906b5c3079fbf5bf013cd3c4.sample"
+
+[deps]
+
+source_file="res://Sound/hud/hudhit.wav"
+dest_files=[ "res://.import/hudhit.wav-5b108874906b5c3079fbf5bf013cd3c4.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

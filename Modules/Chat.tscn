@@ -1,0 +1,119 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Modules/Chat.gd" type="Script" id=1]
+[ext_resource path="res://Font/UbuntuMonoFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://Modules/RemoveFocusOnClick.gd" type="Script" id=3]
+[ext_resource path="res://Sound/chat/sonidomensaje.wav" type="AudioStream" id=4]
+[ext_resource path="res://Interfaz/images/chatbutton.png" type="Texture" id=5]
+[ext_resource path="res://Interfaz/images/flechachat.png" type="Texture" id=6]
+[ext_resource path="res://Interfaz/images/dot.png" type="Texture" id=7]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.203922, 0.231373, 0.247059, 1 )
+draw_center = false
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 4
+border_color = Color( 0.0196078, 0.27451, 0.6, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="Chat" type="CanvasLayer"]
+layer = 3
+script = ExtResource( 1 )
+
+[node name="BGCol" type="ColorRect" parent="."]
+visible = false
+modulate = Color( 0, 0, 0, 0.235294 )
+show_behind_parent = true
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 1024.0
+margin_bottom = 311.0
+rect_min_size = Vector2( 0, 300 )
+mouse_filter = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Message" type="HBoxContainer" parent="."]
+visible = false
+anchor_top = 0.45
+anchor_right = 1.0
+anchor_bottom = 0.5
+margin_right = -180.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TypedMessage" type="LineEdit" parent="Message"]
+margin_right = 800.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 800, 0 )
+custom_styles/normal = SubResource( 1 )
+custom_fonts/font = ExtResource( 2 )
+align = 3
+max_length = 60
+clear_button_enabled = true
+caret_blink = true
+caret_blink_speed = 0.5
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="Message"]
+margin_left = 804.0
+margin_right = 844.0
+margin_bottom = 37.0
+rect_min_size = Vector2( 40, 0 )
+focus_mode = 0
+shortcut_in_tooltip = false
+enabled_focus_mode = 0
+texture_normal = ExtResource( 6 )
+texture_pressed = ExtResource( 6 )
+texture_hover = ExtResource( 6 )
+texture_disabled = ExtResource( 6 )
+texture_focused = ExtResource( 6 )
+expand = true
+
+[node name="ChatBox" type="VBoxContainer" parent="."]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 0.447
+margin_left = 1.0
+margin_top = 1.0
+margin_bottom = -6.20001
+alignment = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ToggleVisibility" type="Button" parent="."]
+margin_top = -1.0
+margin_right = 65.0
+margin_bottom = 65.0
+custom_styles/focus = SubResource( 2 )
+icon = ExtResource( 5 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+
+[node name="dot" type="Sprite" parent="."]
+visible = false
+position = Vector2( 49.7069, 17.3441 )
+scale = Vector2( 0.310483, 0.310483 )
+texture = ExtResource( 7 )
+[connection signal="focus_entered" from="Message/TypedMessage" to="Message/TypedMessage" method="_on_TypedMessage_focus_entered"]
+[connection signal="focus_exited" from="Message/TypedMessage" to="Message/TypedMessage" method="_on_TypedMessage_focus_exited"]
+[connection signal="button_down" from="Message/Button" to="." method="_on_Button_button_down"]
+[connection signal="pressed" from="ToggleVisibility" to="." method="_on_ToggleVisibility_pressed"]

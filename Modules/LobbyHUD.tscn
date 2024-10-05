@@ -1,0 +1,64 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Font/UbuntuMonoFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://Modules/LobbyHUD.gd" type="Script" id=2]
+[ext_resource path="res://Interfaz/images/startbutton.png" type="Texture" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[node name="LobbyHUD" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="Players" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -291.652
+margin_top = -71.4358
+margin_right = -239.652
+margin_bottom = -45.4358
+rect_pivot_offset = Vector2( 31.5248, 13 )
+custom_fonts/font = ExtResource( 1 )
+custom_colors/font_color = Color( 0.129412, 1, 0, 1 )
+text = "1/10"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayersConnected2" type="Label" parent="."]
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -315.261
+margin_top = -96.381
+margin_right = -211.261
+margin_bottom = -70.381
+rect_pivot_offset = Vector2( 31.5248, 13 )
+custom_fonts/font = ExtResource( 1 )
+text = "Players:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="StartButton" type="Button" parent="."]
+visible = false
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -107.928
+margin_top = -128.684
+margin_right = 124.072
+margin_bottom = -9.68372
+custom_styles/focus = SubResource( 1 )
+icon = ExtResource( 3 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="StartButton" to="." method="_on_Button_pressed"]

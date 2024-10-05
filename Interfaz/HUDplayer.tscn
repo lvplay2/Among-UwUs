@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Interfaz/images/reportbutton.png" type="Texture" id=1]
+[ext_resource path="res://Interfaz/images/usebutton.png" type="Texture" id=2]
+[ext_resource path="res://Interfaz/HUDplayer.gd" type="Script" id=3]
+[ext_resource path="res://Interfaz/images/killbutton.png" type="Texture" id=4]
+[ext_resource path="res://Font/UbuntuMonoFont.tres" type="DynamicFont" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=1]
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[node name="HUDplayer" type="CanvasLayer"]
+script = ExtResource( 3 )
+
+[node name="BotonReporte" type="Button" parent="."]
+modulate = Color( 0.501961, 0.501961, 0.501961, 0.501961 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -254.101
+margin_top = -123.449
+margin_right = -140.101
+margin_bottom = -9.4494
+rect_pivot_offset = Vector2( 51.3411, 61.0461 )
+hint_tooltip = "REPORT RIGHT NOW!!!"
+mouse_default_cursor_shape = 16
+custom_styles/focus = SubResource( 1 )
+shortcut_in_tooltip = false
+icon = ExtResource( 1 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonMatar" type="Button" parent="."]
+self_modulate = Color( 0.501961, 0.501961, 0.501961, 0.501961 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -131.931
+margin_top = -227.475
+margin_right = -17.9312
+margin_bottom = -113.475
+rect_pivot_offset = Vector2( 51.3411, 61.0461 )
+hint_tooltip = "REPORT RIGHT NOW!!!"
+mouse_default_cursor_shape = 16
+custom_styles/focus = SubResource( 1 )
+shortcut_in_tooltip = false
+icon = ExtResource( 4 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Delay" type="Label" parent="BotonMatar"]
+anchor_left = 0.5
+anchor_top = 0.539
+anchor_right = 0.5
+anchor_bottom = 0.539
+margin_left = -19.4852
+margin_top = -21.937
+margin_right = 6.51477
+margin_bottom = 5.06296
+rect_scale = Vector2( 1.5, 1.5 )
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 1, 0, 0, 1 )
+custom_constants/shadow_offset_x = 1
+custom_constants/shadow_as_outline = 1
+text = "00"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="BotonUso" type="Button" parent="."]
+modulate = Color( 0.5, 0.5, 0.5, 0.5 )
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -128.951
+margin_top = -114.357
+margin_right = -20.9514
+margin_bottom = -6.35681
+rect_pivot_offset = Vector2( 108, 108 )
+hint_tooltip = "REPORT RIGHT NOW!!!"
+mouse_default_cursor_shape = 16
+custom_styles/focus = SubResource( 2 )
+shortcut_in_tooltip = false
+icon = ExtResource( 2 )
+flat = true
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GlobalLabel" type="Label" parent="."]
+margin_left = -42.8943
+margin_top = 4.48984
+margin_right = 321.106
+margin_bottom = 31.4898
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 138.954, 27 )
+custom_fonts/font = ExtResource( 5 )
+text = "Global finished tasks: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="YourLabel" type="Label" parent="."]
+margin_left = -42.8943
+margin_top = 24.0306
+margin_right = 321.106
+margin_bottom = 51.0306
+rect_scale = Vector2( 0.6, 0.6 )
+rect_pivot_offset = Vector2( 138.954, 27 )
+custom_fonts/font = ExtResource( 5 )
+text = "Your finished tasks: 10/10"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="BotonReporte" to="." method="_on_BotonReporte_pressed"]
+[connection signal="pressed" from="BotonMatar" to="." method="_on_BotonMatar_pressed"]
+[connection signal="pressed" from="BotonUso" to="." method="_on_BotonUso_pressed"]

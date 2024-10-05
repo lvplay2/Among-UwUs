@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/hunterWin.ogg-53627c9f6cba56b3a94d53b626ce3a67.oggstr"
+
+[deps]
+
+source_file="res://Sound/hud/hunterWin.ogg"
+dest_files=[ "res://.import/hunterWin.ogg-53627c9f6cba56b3a94d53b626ce3a67.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

@@ -1,0 +1,224 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Lobby.gd" type="Script" id=1]
+[ext_resource path="res://Font/UbuntuMonoFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://LevelTextures/Tileable/stars.jpg" type="Texture" id=3]
+[ext_resource path="res://Resources/Sprites/Maps/Lobby/AmongUwusLogo.png" type="Texture" id=4]
+[ext_resource path="res://Interfaz/StyleBox.tres" type="StyleBox" id=5]
+[ext_resource path="res://Interfaz/StyleBoxPressed.tres" type="StyleBox" id=6]
+[ext_resource path="res://Interfaz/StyleBoxHover.tres" type="StyleBox" id=7]
+
+[sub_resource type="Animation" id=1]
+resource_name = "StarsAnim"
+length = 10.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("stars:region_rect")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 1000, 500 ), Rect2( 1024, 512, 1000, 500 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("StarsForeground:region_rect")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 10 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Rect2( 0, 0, 640, 580 ), Rect2( 512, 0, 640, 580 ) ]
+}
+
+[node name="Lobby" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
+
+[node name="StarsAnimation" type="AnimationPlayer" parent="CanvasLayer"]
+anims/StarsAnim = SubResource( 1 )
+
+[node name="stars" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 1.5, 1.5, 1.5, 1 )
+position = Vector2( 523.238, 297.375 )
+scale = Vector2( 1.34153, 1.34153 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 1000, 500 )
+
+[node name="StarsForeground" type="Sprite" parent="CanvasLayer"]
+modulate = Color( 1, 1, 1, 0.392157 )
+position = Vector2( 520.718, 264.617 )
+scale = Vector2( 1.68202, 1.68202 )
+texture = ExtResource( 3 )
+region_enabled = true
+region_rect = Rect2( 0, 0, 640, 580 )
+
+[node name="ButtonHost" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 405.0
+margin_top = 256.0
+margin_right = 497.0
+margin_bottom = 299.0
+grow_horizontal = 2
+grow_vertical = 2
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Host"
+expand_icon = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ButtonJoin" type="Button" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -127.0
+margin_top = 162.876
+margin_right = 127.0
+margin_bottom = 218.876
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+text = "Join"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayerNameText" type="LineEdit" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.189
+margin_top = -115.702
+margin_right = 155.811
+margin_bottom = -75.7018
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+max_length = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AmongUwusLogo" type="Sprite" parent="CanvasLayer/PlayerNameText"]
+position = Vector2( 155.811, -106.298 )
+z_index = 2
+texture = ExtResource( 4 )
+
+[node name="Color" type="LineEdit" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -158.189
+margin_top = -12.8195
+margin_right = 155.811
+margin_bottom = 27.1805
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+max_length = 12
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IP" type="LineEdit" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -157.0
+margin_top = 80.7937
+margin_right = 157.0
+margin_bottom = 120.794
+custom_styles/focus = ExtResource( 7 )
+custom_styles/normal = ExtResource( 5 )
+custom_fonts/font = ExtResource( 2 )
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorLabel" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -308.644
+margin_top = -52.6155
+margin_right = 718.356
+margin_bottom = 2.38452
+rect_scale = Vector2( 0.6, 0.6 )
+custom_fonts/font = ExtResource( 2 )
+text = "Write your color here 
+( red, green, blue, yellow, purple, white, black, orange, pink, brown  )"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameText" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -159.779
+margin_top = -144.262
+margin_right = -94.7792
+margin_bottom = -118.262
+custom_fonts/font = ExtResource( 2 )
+text = "Name:"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameText2" type="Label" parent="CanvasLayer"]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -151.505
+margin_top = 50.3317
+margin_right = -8.505
+margin_bottom = 77.3317
+custom_fonts/font = ExtResource( 2 )
+text = "Server IP:"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="CanvasLayer"]
+anchor_top = 1.0
+anchor_bottom = 1.0
+margin_top = -76.0
+margin_right = 76.0
+custom_styles/hover = ExtResource( 7 )
+custom_styles/pressed = ExtResource( 6 )
+custom_styles/normal = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="CanvasLayer/ButtonHost" to="." method="_on_ButtonHost_pressed"]
+[connection signal="pressed" from="CanvasLayer/ButtonJoin" to="." method="_on_ButtonJoin_pressed"]
+[connection signal="pressed" from="CanvasLayer/Button" to="." method="_on_Button_pressed"]

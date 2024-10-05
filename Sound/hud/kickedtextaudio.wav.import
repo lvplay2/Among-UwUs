@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/kickedtextaudio.wav-991a90c98b20303b2a7a60bc41d6b2de.sample"
+
+[deps]
+
+source_file="res://Sound/hud/kickedtextaudio.wav"
+dest_files=[ "res://.import/kickedtextaudio.wav-991a90c98b20303b2a7a60bc41d6b2de.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
